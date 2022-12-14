@@ -9,9 +9,9 @@ def rounding(decimal, decimal_place):
     # This function rounds the decimals
 
     # Process
-    rounded = (decimal * (10 ** decimal_place) + 0.5)
+    rounded = decimal * (10**decimal_place) + 0.5
     rounded = int(rounded)
-    rounded = rounded / (10 ** decimal_place)
+    rounded = rounded / (10**decimal_place)
 
     return rounded
 
