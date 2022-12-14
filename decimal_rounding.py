@@ -5,13 +5,13 @@
 # This program rounds decimals
 
 
-def rounding(deci, deci_place):
+def rounding(decimal, decimal_place):
     # This function rounds the decimals
 
     # Process
-    rounded = (deci * (10 ** deci_place) + 0.5)
+    rounded = (decimal * (10 ** decimal_place) + 0.5)
     rounded = int(rounded)
-    rounded = rounded / (10 ** deci_place)
+    rounded = rounded / (10 ** decimal_place)
 
     return rounded
 
@@ -21,14 +21,14 @@ def main():
     rounding_num = []
 
     # Process
-    user_deci = input("Enter a decimal: ")
+    user_decimal = input("Enter a decimal: ")
     try:
-        user_deci = float(user_deci)
-        user_deci_place = input("Enter desired decimal places to round to: ")
+        user_decimal = float(user_decimal)
+        user_decimal_place = input("Enter desired decimal places to round to: ")
         try:
-            user_deci_place = int(user_deci_place)
-            rounding_num.append(user_deci)
-            rounded_num = rounding(user_deci, user_deci_place)
+            user_decimal_place = int(user_decimal_place)
+            rounding_num.append(user_decimal)
+            rounded_num = rounding(user_decimal, user_decimal_place)
             print("")
             print("Rounded number: ", rounded_num)
         except Exception:
