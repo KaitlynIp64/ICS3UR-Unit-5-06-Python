@@ -5,34 +5,31 @@
 # This program rounds decimals
 
 
-def rounding(decimal, decimal_place):
-    # This function rounds the decimals
+import math
 
-    # Process
-    rounded = decimal * (10**decimal_place) + 0.5
-    rounded = int(rounded)
-    rounded = rounded / (10**decimal_place)
 
-    return rounded
+def decimal_converter(decimal, decimal_places):
+    # rounds a number
+    decimal[0] = decimal[0] * pow(10, decimal_places) + 0.5
+    decimal[0] = int(decimal[0])
+    decimal[0] = decimal[0] / pow(10, decimal_places)
 
 
 def main():
-    # This function gets user's input and shows rounded input
-    rounding_num = []
+    # takes user input, passes it to functions and calls them
+    decimal = []
 
-    # Process
-    user_decimal = input("Enter a decimal: ")
+    str_temp_decimal = input("Enter a decimal: ")
+    str_decimal_places = input("Enter desired decimal places you want to round to: ")
+
     try:
-        user_decimal = float(user_decimal)
-        user_decimal_place = input("Enter desired decimal places to round to: ")
-        try:
-            user_decimal_place = int(user_decimal_place)
-            rounding_num.append(user_decimal)
-            rounded_num = rounding(user_decimal, user_decimal_place)
-            print("")
-            print("Rounded number: ", rounded_num)
-        except ValueError:
-            print("That is not a valid input.")
+        temp_decimal = float(str_temp_decimal)
+        decimal.append(temp_decimal)
+        decimal_places = int(str_decimal_places)
+
+        decimal_converter(decimal, decimal_places)
+
+        print("Rounded number: {0}".format(decimal[0]))
     except ValueError:
         print("That is not a valid input.")
 
