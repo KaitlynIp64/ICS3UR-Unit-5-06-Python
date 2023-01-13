@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Created by: Kaitlyn Ip
-# Created on: Dec 2022
+# Created on: Jan 2023
 # This program rounds decimals
 
 
@@ -31,10 +31,12 @@ def main():
             rounded_num = rounding(user_decimal, user_decimal_place)
             print("")
             print("Rounded number: ", rounded_num)
-        except Exception:
+        except ValueError:
             print("That is not a valid input.")
-    except Exception:
+    except ValueError:
         print("That is not a valid input.")
+
+    print("\nDone.")
 
 
 if __name__ == "__main__":
